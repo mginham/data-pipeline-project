@@ -1,0 +1,100 @@
+- Install PostgreSQL and check that it is working
+
+    psql --version
+
+
+- Install PostgreSQL JDBC Driver, add file to jar folder, and adjust path in python script. 
+
+
+- Install Java and check that it is working
+
+    java -version
+
+
+- Create a virtual environment
+
+    python -m venv venv
+    & .\venv\Scripts\Activate.ps1
+
+
+- Install PySpark
+
+    pip install pyspark
+
+
+- Start the Postgres server
+
+    psql postgres
+
+or 
+
+    psql -U postgres    // for admin privileges
+
+
+- Quit server
+
+    \q
+
+
+- Create a database
+
+    CREATE DATABASE db_name;
+
+    -- example
+    CREATE DATABASE etl_pipeline;
+
+
+- Connect to a database
+
+    \c db_name
+
+    -- example
+    \c etl_pipeline
+
+
+- Create a table
+
+    CREATE TABLE table_name (
+        column_name1 DATATYPE [CONSTRAINTS],
+        column_name2 DATATYPE [CONSTRAINTS],
+        column_name3 DATATYPE [CONSTRAINTS],
+        [...]
+        column_nameN DATATYPE [CONSTRAINTS]
+    );
+
+    -- movie table example
+    CREATE TABLE movies (
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(255),
+        description VARCHAR(255),
+        category VARCHAR(255)
+    );
+
+    -- user state table example
+    CREATE TABLE users (
+        id SERIAL PRIMARY KEY,
+        movie_id INTEGER,
+        rating INTEGER,
+        FOREIGN KEY (movie_id) REFERENCES movies (id) ON DELETE SET NULL
+    );
+
+
+- Check that table exists
+
+    SELECT * FROM db_name;
+
+    -- example
+    SELECT * FROM movies;
+    SELECT * FROM users;
+
+
+- Import data from a CSV file into a table
+
+    \copy table_name FROM 'file_path' DELIMITER ',';
+
+    -- example
+    \copy movies FROM 'C:\Users\mginh\Documents\GitHub\data-pipeline-project\Exercise Files\movies.csv' DELIMITER ',';
+    \copy users FROM 'C:\Users\mginh\Documents\GitHub\data-pipeline-project\Exercise Files\users.csv' DELIMITER ',';
+
+
+- 
