@@ -96,5 +96,3 @@ or
     \copy movies FROM 'C:\Users\mginh\Documents\GitHub\data-pipeline-project\Exercise Files\movies.csv' DELIMITER ',';
     \copy users FROM 'C:\Users\mginh\Documents\GitHub\data-pipeline-project\Exercise Files\users.csv' DELIMITER ',';
 
-
-- 
