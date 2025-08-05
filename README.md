@@ -82,5 +82,10 @@ Database permissions must allow read/write access for the user specified in .env
 - Implement monitoring and alerting for Airflow pipelines
 - Parameterize ETL jobs for flexibility and scalability
 
+## Acknowledgments
+This project was inspired by the **Data Engineering Foundations** course on [LinkedIn Learning](https://www.linkedin.com/learning/data-engineering-foundations).
+
+The project ideas and sample datasets used here are derived from that course. Many thanks to the instructors for providing such valuable resources for learning data engineering concepts.
+
 ## License
 This project is licensed under the MIT License.
